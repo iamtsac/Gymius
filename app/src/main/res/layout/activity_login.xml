@@ -84,4 +84,12 @@
         tools:layout_editor_absoluteX="94dp"
         tools:layout_editor_absoluteY="37dp" />
 
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="203dp"
+        android:layout_height="43dp"
+        android:text="Remember Me"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="344dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
