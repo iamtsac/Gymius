@@ -27,6 +27,7 @@ public class Client {
         //tha pairnei san input to mhxanhma opou vrisketai o client
         //tha pairnei to id tou mhxanhmatos apo to database
         //kai tha dhmiourgei ena neo help request
+        //
         Help_Request HelpRequest = new Help_Request(id,1);
 }
 
