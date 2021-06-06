@@ -1,8 +1,5 @@
 package com.example.gymius;
 
-import com.example.gymius.ui.login.Help_Request;
-import com.example.gymius.ui.login.Subscription;
-
 public class Client {
 
     private String name, home_address;

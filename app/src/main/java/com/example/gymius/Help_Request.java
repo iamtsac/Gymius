@@ -1,4 +1,4 @@
-package com.example.gymius.ui.login;
+package com.example.gymius;
 
 public class Help_Request {
 
