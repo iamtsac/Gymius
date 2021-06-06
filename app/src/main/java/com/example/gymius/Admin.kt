@@ -6,30 +6,30 @@ class Admin(var _name : String = "UNKNOWN", var _id : Int = 0, var _salary : Int
     private var salary = _salary
 
     // name getter & setter
-    fun getAdminName() : String{
+    fun getName() : String{
         return this.name
     }
-    fun setAdminName(newName : String) {
-        this.name = newName
+    fun setName(newName : String) {
+        this.name = newName.capitalize()
     }
 
     // id getter & setter
-    fun getAdminId() : Int{
+    fun getId() : Int{
         return this.id
     }
-    fun setAdminId(newId : Int) {
+    fun setId(newId : Int) {
         this.id = newId
     }
 
     // salary getter & setter
-    fun getAdminSalary() : Int{
+    fun getSalary() : Int{
         return this.salary
     }
-    fun setAdminSalary(newSalary : Int) {
+    fun setSalary(newSalary : Int) {
         this.salary = newSalary
     }
 
-    // function used in Admin's UI that checks if a username exists in the database
+    // checks if a username exists in the database
     fun checkUsernameExists(username : String, table : String) : Boolean{
         var exists : Boolean = false
 
@@ -38,12 +38,12 @@ class Admin(var _name : String = "UNKNOWN", var _id : Int = 0, var _salary : Int
         if(table == "Client") {
             //TODO
         } else if(table == "Trainer"){
+            // creates an account based on the admin's preferences
             //TODO
         }
         return exists
     }
 
-    // creates an account based on the admin's preferences
     fun createAccount(username : String, password : String, table : String){
 
         //TODO: insert new entry in the database in Client or Trainer table
