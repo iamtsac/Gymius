@@ -42,4 +42,13 @@ public class Subscription {
         // dhmiourgei ena neo entry sto database gia to neo sub
         //gyrnaei to id tou sub
     }
+
+    public void updateSubDatabase(){
+        // enhmrwnei to trexon sub me tis nees allages
+    }
+
+    public void findSubDatabase(){  // isws xreiastei to function ???
+        // vriskei to sub enos pelati
+    }
+
 }
