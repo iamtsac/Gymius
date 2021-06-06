@@ -9,7 +9,7 @@ public class GymEquipment {
         PRESSA, BENCH
     }
 
-    public void GymEquipment(int id, equipType type){
+    public GymEquipment(int id, equipType type) {
         this.id = id;
         this.type = type;
     }
@@ -26,4 +26,16 @@ public class GymEquipment {
         type = getEnum();
 
     }*/
+
+    public int getId() {
+        return id;
+    }
+
+    public equipType getType() {
+        return type;
+    }
+
+    public int getDaysUntilMaintenance() {
+        return daysUntilMaintenance;
+    }
 }
