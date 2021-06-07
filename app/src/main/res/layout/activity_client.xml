@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ActivityAdmin">
+    tools:context=".ActivityClient">
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="99dp"
         android:layout_height="18dp"
         android:layout_marginTop="260dp"
-        android:text="Admin Activity"
+        android:text="Client Activity"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

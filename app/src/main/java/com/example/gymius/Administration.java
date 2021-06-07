@@ -39,7 +39,7 @@ public class Administration {
     }
 
     // checks if a username exists in the database
-    public boolean checkUsernameExists(String username, String table){
+    public boolean checkUsernameExists(DBHandler dbHandler, String username, String table){
         boolean exists = false;
         //TODO
         if (table == "Client"){
@@ -51,23 +51,19 @@ public class Administration {
     }
 
     // creates an entry in the db so that the user can connect to the app
-    public void createAccount(String username, String password, String table){
-        //TODO
+    public void createAccount(DBHandler dbHandler, String username, String password, String table){
+
+        dbHandler.addNewUser(username, password);
         if(table == "Client"){
-
+            //TODO
         } else if(table == "Trainer"){
-
+            //TODO
         }
     }
 
     // deletes an account based on the admin's chosen id
-    public void deleteAccount(int id, String table){
-        //TODO
-        if(table == "Client"){
-
-        } else if(table == "Trainer"){
-
-        }
+    public void deleteAccount(DBHandler dbHandler, String username){
+        dbHandler.removeUser(username);
     }
 
 }
