@@ -42,23 +42,31 @@ public class ActivityLogin extends AppCompatActivity {
 
                     String table = dbHandler.LogInVerification(username, password);
 
-                    if(table == "Administration"){
-                        loginProgressBar.setVisibility(ProgressBar.INVISIBLE);
-                        Intent intent = new Intent(getApplicationContext(), ActivityAdmin.class);
-                        startActivity(intent);
-                        finish();
-                    } else if(table == "Client"){
-                        loginProgressBar.setVisibility(ProgressBar.INVISIBLE);
-                        Intent intent = new Intent(getApplicationContext(), ActivityClient.class);
-                        startActivity(intent);
-                        finish();
-                    } else if(table == "Trainer"){
-                        loginProgressBar.setVisibility(ProgressBar.INVISIBLE);
-                        Intent intent = new Intent(getApplicationContext(), ActivityTrainer.class);
-                        startActivity(intent);
-                        finish();
-                    } else {
-                        Toast.makeText(getApplicationContext(), "Oops, something went wrong.", Toast.LENGTH_SHORT).show();
+                    switch (table) {
+                        case "Administration": {
+                            loginProgressBar.setVisibility(ProgressBar.INVISIBLE);
+                            Intent intent = new Intent(getApplicationContext(), ActivityAdmin.class);
+                            startActivity(intent);
+                            //finish();
+                            break;
+                        }
+                        case "Client": {
+                            loginProgressBar.setVisibility(ProgressBar.INVISIBLE);
+                            Intent intent = new Intent(getApplicationContext(), ActivityClient.class);
+                            startActivity(intent);
+                            //finish();
+                            break;
+                        }
+                        case "Trainer": {
+                            loginProgressBar.setVisibility(ProgressBar.INVISIBLE);
+                            Intent intent = new Intent(getApplicationContext(), ActivityTrainer.class);
+                            startActivity(intent);
+                            //finish();
+                            break;
+                        }
+                        default:
+                            Toast.makeText(getApplicationContext(), "Oops, something went wrong.", Toast.LENGTH_SHORT).show();
+                            break;
                     }
                 } else {
                     Toast.makeText(getApplicationContext(), "All fields are required", Toast.LENGTH_SHORT).show();

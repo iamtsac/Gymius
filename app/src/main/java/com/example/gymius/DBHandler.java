@@ -95,7 +95,7 @@ public class DBHandler extends SQLiteOpenHelper {
         db.close();
     }
 
-    // add new role to our DB
+    // add new role to DB
     // currently available roles: Administration, Client, Trainer
     public void addNewRole(String role_name){
 
@@ -107,6 +107,7 @@ public class DBHandler extends SQLiteOpenHelper {
         db.insert("Roles", null, values);
     }
 
+    // add new User Role to DB
     public void addNewUserRole(int user_id, int role_id){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -180,11 +181,11 @@ public class DBHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         String sql = "SELECT role_name FROM Roles " +
                     "INNER JOIN User_Roles ON Roles.role_id = User_Roles.role_id " +
-                    "INNER JOIN Users ON User.id = User_Roles.user_id " +
-                    "WHERE Users.username = " + username + " AND Users.password = " + password;
+                    "INNER JOIN Users ON Users.id = User_Roles.user_id " +
+                    "WHERE Users.username = '" + username + "' AND Users.password = '" + password + "'";
         Cursor cursorLogIn = db.rawQuery(sql, null); // get role of the User that wants to log in
         if(cursorLogIn.moveToFirst()){
-            table = cursorLogIn.getString(1);
+            table = cursorLogIn.getString(0);
         }
 
         cursorLogIn.close();
@@ -207,10 +208,10 @@ public class DBHandler extends SQLiteOpenHelper {
         if (cursorClients.moveToFirst()) {
             do {
                 // on below line we are adding the data from cursor to our array list.
-                clientsArrayList.add(new Client(cursorClients.getString(1),
-                        cursorClients.getString(2),
-                        cursorClients.getInt(3),
-                        cursorClients.getInt(4)));
+                clientsArrayList.add(new Client(cursorClients.getString(0),
+                        cursorClients.getString(1),
+                        cursorClients.getInt(2),
+                        cursorClients.getInt(3)));
             } while (cursorClients.moveToNext());
             // moving our cursor to next.
         }
