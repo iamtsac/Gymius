@@ -77,16 +77,9 @@ public class DBHandler extends SQLiteOpenHelper {
     // add new User to our DB
     public void addNewUser(String username, String password) {
 
-        // creating a variable for our DB
-        // and calling writable method
-        // as we are writing data in our DB.
         SQLiteDatabase db = this.getWritableDatabase();
-
-        // variable for content values.
         ContentValues values = new ContentValues();
 
-        // on below line we are passing all values
-        // along with its key and value pair.
         values.put("username", username);
         values.put("password", password);
 
@@ -167,6 +160,7 @@ public class DBHandler extends SQLiteOpenHelper {
         db.close();
     }
 
+    //delete entry from Users table (
     public void removeUser(String username){
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete("Users", "username=?", new String[]{username});
@@ -192,33 +186,62 @@ public class DBHandler extends SQLiteOpenHelper {
         return table;
     }
 
-    // method for reading all the Clients in DB (example function)
-    public ArrayList<Client> readClients() {
-        // on below line we are creating a
-        // database for reading our database.
+    public int loadUserId(String username){
+        int id = 0;
+
         SQLiteDatabase db = this.getReadableDatabase();
-
-        // on below line we are creating a cursor with query to read data from database.
-        Cursor cursorClients = db.rawQuery("SELECT name, address, age, id FROM " + "Users", null);
-
-        // on below line we are creating a new array list.
-        ArrayList<Client> clientsArrayList = new ArrayList<>();
-
-        // moving our cursor to first position. //public Client(String name, String home_address, int age, int id)
-        if (cursorClients.moveToFirst()) {
-            do {
-                // on below line we are adding the data from cursor to our array list.
-                clientsArrayList.add(new Client(cursorClients.getString(0),
-                        cursorClients.getString(1),
-                        cursorClients.getInt(2),
-                        cursorClients.getInt(3)));
-            } while (cursorClients.moveToNext());
-            // moving our cursor to next.
+        String sql = "SELECT id FROM Users WHERE username = '" + username + "'";
+        Cursor cursorLogIn = db.rawQuery(sql, null);
+        if(cursorLogIn.moveToFirst()){
+            id = cursorLogIn.getInt(0);
         }
-        // at last closing our cursor
-        // and returning our array list.
-        cursorClients.close();
-        return clientsArrayList;
+
+        cursorLogIn.close();
+        return id;
+    }
+
+    // function for reading all usernames in Client or Trainer table
+    public ArrayList<String> loadAllUsernames(String table) {
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        ArrayList<String> usernamesArrayList = new ArrayList<>();
+
+        switch (table) {
+            case "Client" : {
+                String sql = "SELECT User.username FROM " + "Client" +
+                        "INNER JOIN User_Roles ON Roles.role_id = User_Roles.role_id " +
+                        "INNER JOIN Users ON Users.id = User_Roles.user_id " +
+                        "WHERE Roles.role_name = 'Client'";
+                Cursor cursorClientUsernames = db.rawQuery(sql, null);
+
+                if (cursorClientUsernames.moveToFirst()) {
+                    do {
+                        usernamesArrayList.add(cursorClientUsernames.getString(0));
+                    } while (cursorClientUsernames.moveToNext());
+
+                    cursorClientUsernames.close();
+                }
+                break;
+            }
+            case "Trainer" : {
+                String sql = "SELECT User.username FROM " + "Client" +
+                        "INNER JOIN User_Roles ON Roles.role_id = User_Roles.role_id " +
+                        "INNER JOIN Users ON Users.id = User_Roles.user_id " +
+                        "WHERE Roles.role_name = 'Trainer'";
+                Cursor cursorClientUsernames = db.rawQuery(sql, null);
+
+                if (cursorClientUsernames.moveToFirst()) {
+                    do {
+                        usernamesArrayList.add(cursorClientUsernames.getString(0));
+                    } while (cursorClientUsernames.moveToNext());
+
+                    cursorClientUsernames.close();
+                }
+                break;
+            }
+        }
+
+        return usernamesArrayList;
     }
 
     // needed function, not used in code

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             android:id="@+id/admin_activity_navigation"
+    app:startDestination="@id/activityAdminFrag1">
+
+    <fragment
+        android:id="@+id/activityAdminFrag1"
+        android:name="com.example.gymius.ActivityAdminFrag1"
+        android:label="ActivityAdminFrag1" >
+        <action
+            android:id="@+id/action_activityAdminFrag1_to_activityAdminFrag2"
+            app:destination="@id/activityAdminFrag2" />
+    </fragment>
+    <fragment
+        android:id="@+id/activityAdminFrag2"
+        android:name="com.example.gymius.ActivityAdminFrag2"
+        android:label="ActivityAdminFrag2" >
+        <action
+            android:id="@+id/action_activityAdminFrag2_to_activityAdminFrag1"
+            app:destination="@id/activityAdminFrag1" />
+    </fragment>
+</navigation>

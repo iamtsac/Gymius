@@ -53,6 +53,7 @@ public class ActivityLogin extends AppCompatActivity {
                         case "Client": {
                             loginProgressBar.setVisibility(ProgressBar.INVISIBLE);
                             Intent intent = new Intent(getApplicationContext(), ActivityClient.class);
+                            intent.putExtra("username", username);
                             startActivity(intent);
                             //finish();
                             break;
@@ -60,12 +61,13 @@ public class ActivityLogin extends AppCompatActivity {
                         case "Trainer": {
                             loginProgressBar.setVisibility(ProgressBar.INVISIBLE);
                             Intent intent = new Intent(getApplicationContext(), ActivityTrainer.class);
+                            intent.putExtra("username", username);
                             startActivity(intent);
                             //finish();
                             break;
                         }
                         default:
-                            Toast.makeText(getApplicationContext(), "Oops, something went wrong.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "Oops, something went wrong", Toast.LENGTH_SHORT).show();
                             break;
                     }
                 } else {

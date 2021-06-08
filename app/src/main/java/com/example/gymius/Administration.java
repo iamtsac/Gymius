@@ -1,5 +1,7 @@
 package com.example.gymius;
 
+import java.util.ArrayList;
+
 public class Administration {
     private int id;
     private String name;
@@ -39,31 +41,34 @@ public class Administration {
     }
 
     // checks if a username exists in the database
-    public boolean checkUsernameExists(DBHandler dbHandler, String username, String table){
+    public boolean checkUsernameExists(DBHandler dbHandler, String username){
         boolean exists = false;
+
         //TODO
-        if (table == "Client"){
 
-        } else if(table == "Trainer"){
-
-        }
         return exists;
     }
 
     // creates an entry in the db so that the user can connect to the app
     public void createAccount(DBHandler dbHandler, String username, String password, String table){
-
         dbHandler.addNewUser(username, password);
-        if(table == "Client"){
-            //TODO
-        } else if(table == "Trainer"){
-            //TODO
-        }
     }
+    public void createClient(DBHandler dbHandler ,int id, String name, int age, String address, String info){
+        dbHandler.addNewClient(id, name, age, address, info);
+    }
+    public void createTrainer(DBHandler dbHandler, int id, String name, String speciality, double salary, float total_hours_worked){
+        dbHandler.addNewTrainer(id, name, speciality, salary, total_hours_worked);
+    }
+
+
 
     // deletes an account based on the admin's chosen id
     public void deleteAccount(DBHandler dbHandler, String username){
         dbHandler.removeUser(username);
+    }
+
+    public void loadAllUsernames(DBHandler dbHandler, String table){
+        ArrayList<String> usernamesArrayList = dbHandler.loadAllUsernames(table);
     }
 
 }
