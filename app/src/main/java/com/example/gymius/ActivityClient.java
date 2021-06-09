@@ -12,6 +12,7 @@ public class ActivityClient extends AppCompatActivity {
     String username; // to be initialized from data sent from ActivityLogin
     private Button button1;
     private Button button2;
+    private Button button3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +37,14 @@ public class ActivityClient extends AppCompatActivity {
                 openDeleteSessionActivity();
             }
         });
+
+        button3 = (Button) findViewById(R.id.editSessionButton);
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openEditSessionActivity();
+            }
+        });
     }
     public void openCreateSessionActivity(){
         Intent intent = new Intent(this, CreateSessionActivity.class);
@@ -43,9 +52,15 @@ public class ActivityClient extends AppCompatActivity {
     }
 
     public void openDeleteSessionActivity(){
-        Intent intent = new Intent(this, CreateSessionActivity.class);
+        Intent intent = new Intent(this, DeleteSessionActivity.class);
         startActivity(intent);
     }
+
+    public void openEditSessionActivity(){
+        Intent intent = new Intent(this, EditSessionActivity.class);
+        startActivity(intent);
+    }
+
 
 
 
