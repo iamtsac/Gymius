@@ -10,7 +10,8 @@ import android.widget.Button;
 public class ActivityClient extends AppCompatActivity {
 
     String username; // to be initialized from data sent from ActivityLogin
-    private Button button;
+    private Button button1;
+    private Button button2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,12 +19,21 @@ public class ActivityClient extends AppCompatActivity {
 
         Intent intent = getIntent();
         username = intent.getStringExtra("username");
-        button = (Button) findViewById(R.id.createSessionButton);
-        button.setOnClickListener(new View.OnClickListener(){
+        button1 = (Button) findViewById(R.id.createSessionButton);
+        button1.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View v){
                 openCreateSessionActivity();
+            }
+        });
+
+        button2 = (Button) findViewById(R.id.deleteSessionButton);
+        button2.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v){
+                openDeleteSessionActivity();
             }
         });
     }
@@ -31,5 +41,12 @@ public class ActivityClient extends AppCompatActivity {
         Intent intent = new Intent(this, CreateSessionActivity.class);
         startActivity(intent);
     }
+
+    public void openDeleteSessionActivity(){
+        Intent intent = new Intent(this, CreateSessionActivity.class);
+        startActivity(intent);
+    }
+
+
 
 }
