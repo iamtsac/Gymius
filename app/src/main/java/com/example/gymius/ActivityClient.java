@@ -12,7 +12,7 @@ import android.widget.TextView;
 public class ActivityClient extends AppCompatActivity {
 
     String username; // to be initialized from data sent from ActivityLogin
-    TextView usernameEdit;
+    TextView usernameEdit, test;
     Button createSession;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
