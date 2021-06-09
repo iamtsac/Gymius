@@ -17,4 +17,6 @@ public class ActivityClient extends AppCompatActivity {
         Intent intent = getIntent();
         username = intent.getStringExtra("username");
     }
+
+
 }
