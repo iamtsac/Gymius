@@ -6,13 +6,36 @@
     android:layout_height="match_parent"
     tools:context=".ActivityClient">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="99dp"
-        android:layout_height="18dp"
-        android:layout_marginTop="260dp"
-        android:text="Client Activity"
+
+
+    <Button
+        android:id="@+id/createSessionButton"
+        android:layout_width="167dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="216dp"
+        android:text="CREATE SESSION"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/editSessionButton"
+        android:layout_width="167dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="328dp"
+        android:text="EDIT SESSION"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/deleteSessionButton"
+        android:layout_width="167dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="444dp"
+        android:text="DELETE SESSION"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

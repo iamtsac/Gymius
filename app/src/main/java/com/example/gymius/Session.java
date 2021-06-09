@@ -49,7 +49,7 @@ public class Session {
     }
 
     public void getTrainingProgramsInSession(int id){
-        //pairnei ta omadika programmata apo to session
+        //pairnei ta omadika programmata tou session apo th vash dedomenwn
     }
 
     public void getSpecialServicesInSession(int id){
@@ -57,7 +57,11 @@ public class Session {
     }
 
     public void SaveSession(int id){
-        //kanei save to session sth vash dedomenwn
+        //kanei save to session apo th vash dedomenwn
+    }
+
+    public void deleteSession(int id){
+        //kanei delete to session apo th vash dedomenwn
     }
 
 }
