@@ -13,6 +13,7 @@ public class GymEquipment {
         this.id = id;
         this.type = type;
     }
+    private Queue queue = new Queue(0, (float) 0.00);
 
     public void setDaysUntilMaintenance(int days){
         this.daysUntilMaintenance = days;
@@ -37,5 +38,9 @@ public class GymEquipment {
 
     public int getDaysUntilMaintenance() {
         return daysUntilMaintenance;
+    }
+
+    public int getQueueLength(){
+        return queue.checkQueue();
     }
 }
