@@ -54,9 +54,11 @@ public class Administration {
         dbHandler.addNewUser(username, password);
     }
     public void createClient(DBHandler dbHandler ,int id, String name, int age, String address, String info){
+        dbHandler.addNewUserRole(id, 2);
         dbHandler.addNewClient(id, name, age, address, info);
     }
     public void createTrainer(DBHandler dbHandler, int id, String name, String speciality, double salary, float total_hours_worked){
+        dbHandler.addNewUserRole(id, 3);
         dbHandler.addNewTrainer(id, name, speciality, salary, total_hours_worked);
     }
 
