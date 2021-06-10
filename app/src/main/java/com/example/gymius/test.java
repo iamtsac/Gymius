@@ -2,7 +2,6 @@ package com.example.gymius;
 
 public class test {
     public static void main(String[] args) {
-
         System.out.println("Hello, World!");
     }
 }
