@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <CheckBox
+        android:id="@+id/hack_squat"
+        android:layout_width="112dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="147dp"
+        android:layout_marginTop="459dp"
+        android:layout_marginEnd="152dp"
+        android:layout_marginBottom="230dp"
+        android:text="Hack Squat"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/outer"
+        android:layout_width="112dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="515dp"
+        android:layout_marginEnd="283dp"
+        android:layout_marginBottom="174dp"
+        android:text="Outer Thigh "
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/inner"
+        android:layout_width="112dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="147dp"
+        android:layout_marginTop="515dp"
+        android:layout_marginEnd="152dp"
+        android:layout_marginBottom="174dp"
+        android:text="Inner Thigh "
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/half"
+        android:layout_width="112dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="281dp"
+        android:layout_marginTop="515dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="174dp"
+        android:text="Half Rack"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/leg_press"
+        android:layout_width="112dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="281dp"
+        android:layout_marginTop="459dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="230dp"
+        android:text="Leg Press"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/seated_leg"
+        android:layout_width="112dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="459dp"
+        android:layout_marginEnd="283dp"
+        android:layout_marginBottom="230dp"
+        android:text="Seated Leg Curl"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/assisted_pull"
+        android:layout_width="112dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="282dp"
+        android:layout_marginTop="357dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginBottom="332dp"
+        android:text="Assisted Pull-Up"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/back_ext"
+        android:layout_width="112dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="147dp"
+        android:layout_marginTop="357dp"
+        android:layout_marginEnd="152dp"
+        android:layout_marginBottom="332dp"
+        android:text="Back Extension "
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/low_seated"
+        android:layout_width="112dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="357dp"
+        android:layout_marginEnd="283dp"
+        android:layout_marginBottom="332dp"
+        android:text="Low Seated Row"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/pull_over"
+        android:layout_width="112dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="281dp"
+        android:layout_marginTop="302dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="387dp"
+        android:text="Pull-Over Machine"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/hyper"
+        android:layout_width="112dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="147dp"
+        android:layout_marginTop="302dp"
+        android:layout_marginEnd="152dp"
+        android:layout_marginBottom="387dp"
+        android:text="HyperExtension"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/deadlift"
+        android:layout_width="112dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="302dp"
+        android:layout_marginEnd="283dp"
+        android:layout_marginBottom="387dp"
+        android:text="Barbell Deadlift"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/machine_fly"
+        android:layout_width="112dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="281dp"
+        android:layout_marginTop="196dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="493dp"
+        android:text="Machine_Fly"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/incline_bench"
+        android:layout_width="112dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="147dp"
+        android:layout_marginTop="196dp"
+        android:layout_marginEnd="152dp"
+        android:layout_marginBottom="493dp"
+        android:text="Incline Bench Press"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/dips"
+        android:layout_width="112dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="196dp"
+        android:layout_marginEnd="283dp"
+        android:layout_marginBottom="493dp"
+        android:text="Dips"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/chest_press"
+        android:layout_width="112dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="281dp"
+        android:layout_marginTop="144dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="545dp"
+        android:text="Chest Press"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/pecdeck"
+        android:layout_width="112dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="147dp"
+        android:layout_marginTop="144dp"
+        android:layout_marginEnd="152dp"
+        android:layout_marginBottom="545dp"
+        android:text="Pec Deck"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="256dp"
+        android:layout_marginTop="628dp"
+        android:text="Cancel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="415dp"
+        android:text="Legs"
+        android:textAlignment="center"
+        android:textColor="#3F51B5"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="261dp"
+        android:text="Back"
+        android:textAlignment="center"
+        android:textColor="#3F51B5"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="346dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:text="Select Equipment"
+        android:textAlignment="center"
+        android:textColor="#3F51B5"
+        android:textSize="34sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="100dp"
+        android:text="Chest"
+        android:textAlignment="center"
+        android:textColor="#3F51B5"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="628dp"
+        android:text="sumbit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/barbell_bench"
+        android:layout_width="112dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="144dp"
+        android:layout_marginEnd="283dp"
+        android:layout_marginBottom="545dp"
+        android:text="Barbell bench press"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
