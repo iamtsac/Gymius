@@ -30,6 +30,7 @@ public class ActivityDBInitializer extends AppCompatActivity {
         dbHandler.addNewUser("trainer1", "trainer1"); // user_id = 3
         dbHandler.addNewUserRole(3, 3);
         dbHandler.addNewTrainer(3, "Tony", "Specialty 1", 800, 200);
+        dbHandler.addEquipment("legpress", 0);
 
 
         Intent intent = new Intent(getApplicationContext(), ActivityLogin.class);

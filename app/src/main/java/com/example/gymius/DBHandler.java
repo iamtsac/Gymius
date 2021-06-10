@@ -64,6 +64,11 @@ public class DBHandler extends SQLiteOpenHelper {
                 + "salary" + " DECIMAL(5,2),"
                 + " FOREIGN KEY(id) REFERENCES Users(id) ON DELETE CASCADE ON UPDATE CASCADE)";
 
+        String equipmentQuery = "CREATE TABLE  IF NOT EXISTS " + "GymEquipment" + "("
+                + "id" + "INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + "type" + "TEXT CHECK(type IN ('LEGPRESS','CHESTBENCH','CROSSOVER')), "
+                + "queue" + "INTEGER)";
+
         // ADD ANY OTHER TABLE NEEDED
 
         db.execSQL(userQuery);
@@ -72,6 +77,7 @@ public class DBHandler extends SQLiteOpenHelper {
         db.execSQL(clientQuery);
         db.execSQL(trainerQuery);
         db.execSQL(adminQuery);
+        db.execSQL(equipmentQuery);
     }
 
     // add new User to our DB
@@ -160,6 +166,7 @@ public class DBHandler extends SQLiteOpenHelper {
         db.close();
     }
 
+
     //delete entry from Users table (
     public void removeUser(String username){
         SQLiteDatabase db = this.getWritableDatabase();
@@ -199,6 +206,49 @@ public class DBHandler extends SQLiteOpenHelper {
         cursorLogIn.close();
         return id;
     }
+    public void addEquipment(String type, int queue) {
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        values.put("type", type.toUpperCase());
+        values.put("queue", queue);
+
+        db.insert("GymEquipment", null, values);
+
+        db.close();
+    }
+    public int getQueue(int id){
+        int queue_length=0;
+        SQLiteDatabase db = this.getReadableDatabase();
+        String sql = "SELECT queue FROM GymEquipment " +
+                "WHERE GymEquipent.id = '" + id;
+        Cursor cursorQueue = db.rawQuery(sql, null); // get role of the User that wants to log in
+        if(cursorQueue.moveToFirst()){
+             queue_length = cursorQueue.getInt(0);
+        }
+
+        cursorQueue.close();
+        return queue_length;
+    }
+    public void addToQueue(int id){
+        int queue_len = getQueue(id);
+        queue_len= queue_len++;
+        String id_str = Integer.toString(id);
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        // on below line we are passing all values
+        // along with its key and value pair.
+        values.put("queue", queue_len);
+
+
+        // on below line we are calling a update method to update our database and passing our values.
+        // and we are comparing it with name of our course which is stored in original name variable.
+        db.update("GymEquipment", values, "id=?", new String[]{id_str});
+        db.close();
+    }
+
 
     // function for reading all usernames in Client or Trainer table
     public ArrayList<String> loadAllUsernames(String table) {
