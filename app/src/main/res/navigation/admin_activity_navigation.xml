@@ -19,6 +19,15 @@
         <action
             android:id="@+id/action_activityAdminFrag1_to_activity_admin_frag_4"
             app:destination="@id/activity_admin_frag_4" />
+        <action
+            android:id="@+id/action_activityAdminFrag1_to_activityAdminEquipment"
+            app:destination="@id/activity_admin_frag_5" />
+        <action
+            android:id="@+id/action_activityAdminFrag1_to_activityAdminGroupPrograms"
+            app:destination="@id/activity_admin_frag_6" />
+        <action
+            android:id="@+id/action_activityAdminFrag1_to_activity_admin_frag_7"
+            app:destination="@id/activity_admin_frag_7" />
     </fragment>
     <fragment
         android:id="@+id/activityAdminFrag2"
@@ -46,6 +55,33 @@
         tools:layout="@layout/activity_admin_frag_4" >
         <action
             android:id="@+id/action_activity_admin_frag_4_to_activityAdminFrag1"
+            app:destination="@id/activityAdminFrag1" />
+    </fragment>
+    <fragment
+        android:id="@+id/activity_admin_frag_5"
+        android:name="com.example.gymius.ActivityAdminEquipment"
+        android:label="activity_admin_frag_5"
+        tools:layout="@layout/activity_admin_frag_5" >
+        <action
+            android:id="@+id/action_activityAdminEquipment_to_activityAdminFrag1"
+            app:destination="@id/activityAdminFrag1" />
+    </fragment>
+    <fragment
+        android:id="@+id/activity_admin_frag_6"
+        android:name="com.example.gymius.ActivityAdminGroupPrograms"
+        android:label="activity_admin_frag_6"
+        tools:layout="@layout/activity_admin_frag_6" >
+        <action
+            android:id="@+id/action_activity_admin_frag_6_to_activityAdminFrag1"
+            app:destination="@id/activityAdminFrag1" />
+    </fragment>
+    <fragment
+        android:id="@+id/activity_admin_frag_7"
+        android:name="com.example.gymius.ActivityAdminSpecialServices"
+        android:label="activity_admin_frag_7"
+        tools:layout="@layout/activity_admin_frag_7" >
+        <action
+            android:id="@+id/action_activity_admin_frag_7_to_activityAdminFrag1"
             app:destination="@id/activityAdminFrag1" />
     </fragment>
 </navigation>
