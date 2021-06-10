@@ -1,5 +1,6 @@
 package com.example.gymius;
 
+
 public class Queue {
 
     private int length;
@@ -9,13 +10,13 @@ public class Queue {
        this.waitingTime = waitingTime;
     }
 
-   public int checkQueue(){
+    public int checkQueue(){
         return this.length;
    }
 
-   public void addToQueue(){
-       this.length++;
-   }
+   /*public void addToQueue(){
+
+   }*/
    public void setWaitingTime(float time){
         this.waitingTime = time;
    }
