@@ -50,7 +50,7 @@ public class Administration {
     }
 
     // creates an entry in the db so that the user can connect to the app
-    public void createAccount(DBHandler dbHandler, String username, String password, String table){
+    public void createAccount(DBHandler dbHandler, String username, String password){
         dbHandler.addNewUser(username, password);
     }
     public void createClient(DBHandler dbHandler ,int id, String name, int age, String address, String info){
