@@ -1,23 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
              xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
              android:id="@+id/admin_activity_navigation"
     app:startDestination="@id/activityAdminFrag1">
 
     <fragment
         android:id="@+id/activityAdminFrag1"
         android:name="com.example.gymius.ActivityAdminFrag1"
+        tools:layout="@layout/activity_admin_frag_1"
         android:label="ActivityAdminFrag1" >
         <action
             android:id="@+id/action_activityAdminFrag1_to_activityAdminFrag2"
             app:destination="@id/activityAdminFrag2" />
+        <action
+            android:id="@+id/action_activityAdminFrag1_to_activityAdminFrag3"
+            app:destination="@id/activityAdminFrag3" />
     </fragment>
     <fragment
         android:id="@+id/activityAdminFrag2"
         android:name="com.example.gymius.ActivityAdminFrag2"
+
+        tools:layout="@layout/activity_admin_frag_2"
         android:label="ActivityAdminFrag2" >
         <action
             android:id="@+id/action_activityAdminFrag2_to_activityAdminFrag1"
+            app:destination="@id/activityAdminFrag1" />
+    </fragment>
+    <fragment
+        android:id="@+id/activityAdminFrag3"
+        android:name="com.example.gymius.ActivityAdminEmployeeManagement"
+        tools:layout="@layout/activity_admin_frag_3"
+        android:label="ActivityAdminFrag2" >
+        <action
+            android:id="@+id/action_activityAdminFrag3_to_activityAdminFrag1"
             app:destination="@id/activityAdminFrag1" />
     </fragment>
 </navigation>
