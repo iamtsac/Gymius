@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_activityAdminFrag1_to_activityAdminFrag3"
             app:destination="@id/activityAdminFrag3" />
+        <action
+            android:id="@+id/action_activityAdminFrag1_to_activity_admin_frag_4"
+            app:destination="@id/activity_admin_frag_4" />
     </fragment>
     <fragment
         android:id="@+id/activityAdminFrag2"
@@ -34,6 +37,15 @@
         android:label="ActivityAdminFrag2" >
         <action
             android:id="@+id/action_activityAdminFrag3_to_activityAdminFrag1"
+            app:destination="@id/activityAdminFrag1" />
+    </fragment>
+    <fragment
+        android:id="@+id/activity_admin_frag_4"
+        android:name="com.example.gymius.ActivityAdminSubscriptions"
+        android:label="activity_admin_frag_4"
+        tools:layout="@layout/activity_admin_frag_4" >
+        <action
+            android:id="@+id/action_activity_admin_frag_4_to_activityAdminFrag1"
             app:destination="@id/activityAdminFrag1" />
     </fragment>
 </navigation>
