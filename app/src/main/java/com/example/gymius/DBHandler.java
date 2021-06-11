@@ -69,7 +69,21 @@ public class DBHandler extends SQLiteOpenHelper {
                 + "type" + "TEXT CHECK(type IN ('LEGPRESS','CHESTBENCH','CROSSOVER')), "
                 + "queue" + "INTEGER)";
 
-        // ADD ANY OTHER TABLE NEEDED
+        String sessionQuery =  "CREATE TABLE  IF NOT EXISTS " +"Sessions" + "("
+                + "idsession" + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+                + "name" + " TEXT,"
+                + "date" + "TEXT,"
+                + "time"  + "INTEGER,"
+                + "program"+  "TEXT CHECK(type IN ('GYM','GROUP','SPECIAL')),"
+                + "userid" +  "INTEGER,"
+                + " FOREIGN KEY(id) REFERENCES Users(id) ON DELETE CASCADE ON UPDATE CASCADE)";
+
+        String sessionSelections = "CREATE TABLE  IF NOT EXISTS " +"Sessions" + "("
+                + "sessionid" + " INTEGER PRIMARY KEY ,"
+                + "name" + " TEXT,"
+                + " FOREIGN KEY(sessionid) REFERENCES Sessions(idsession) ON DELETE CASCADE ON UPDATE CASCADE)";
+
+                // ADD ANY OTHER TABLE NEEDED
 
         db.execSQL(userQuery);
         db.execSQL(rolesQuery);
@@ -78,6 +92,8 @@ public class DBHandler extends SQLiteOpenHelper {
         db.execSQL(trainerQuery);
         db.execSQL(adminQuery);
         db.execSQL(equipmentQuery);
+        db.execSQL(sessionQuery);
+        db.execSQL(sessionSelections);
     }
 
     // add new User to our DB
@@ -292,6 +308,13 @@ public class DBHandler extends SQLiteOpenHelper {
         }
 
         return usernamesArrayList;
+    }
+
+    public int ClientId (String username){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res = db.rawQuery("Select * from Users WHERE username ="+username,null);
+        int id = res.getColumnIndex("id");
+        return id;
     }
 
     // needed function, not used in code
