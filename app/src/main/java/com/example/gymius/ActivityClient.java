@@ -31,6 +31,7 @@ public class ActivityClient extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent1 = new Intent(getApplicationContext(),ActivityCreateSession.class);
+                intent.putExtra("username",username);
                 startActivity(intent1);
             }
         });

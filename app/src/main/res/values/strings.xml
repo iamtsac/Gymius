@@ -11,12 +11,4 @@
     <string name="login_failed">"Login failed"</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-
-    <string-array name="spinner_discount">
-        <item>6 month subscription</item>
-        <item>Special Service 1</item>
-        <item>12 month subscription</item>
-        <item>Special Service 2</item>
-    </string-array>
-
 </resources>
