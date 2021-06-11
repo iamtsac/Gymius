@@ -31,7 +31,7 @@ public class ActivityDBInitializer extends AppCompatActivity {
         dbHandler.addNewUserRole(3, 3);
         dbHandler.addNewTrainer(3, "Tony", "Specialty 1", 800, 200);
         dbHandler.addEquipment("legpress", 0);
-
+        dbHandler.CreateSession("test","1/1/2001", "12",2);
 
         Intent intent = new Intent(getApplicationContext(), ActivityLogin.class);
         startActivity(intent);
