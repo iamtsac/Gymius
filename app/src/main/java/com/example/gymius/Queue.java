@@ -14,13 +14,11 @@ public class Queue {
        this.waitingTime = waitingTime;
     }
 
-    public int checkQueue(int id){
-        DBHandler dbHandler = new DBHandler(getApplicationContext());
+    public int checkQueue(int id,DBHandler dbHandler){
         return dbHandler.getQueue(id);
    }
 
-   public void addToQueue(int id){
-       DBHandler dbHandler = new DBHandler(getApplicationContext());
+   public void addToQueue(int id,DBHandler dbHandler){
        dbHandler.addToQueue(id);
 
    }

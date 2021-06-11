@@ -7,7 +7,6 @@ public class GymEquipment {
     private int id;
     private equipType type;
     private int daysUntilMaintenance;
-    DBHandler dbHandler = new DBHandler(getApplicationContext());
     enum equipType{
         LEGPRESS,CHESTBENCH,CROSSOVER
     }
@@ -26,11 +25,11 @@ public class GymEquipment {
         return type;
     }
 
-    public void addToDatabase(){
+    public void addToDatabase(DBHandler dbHandler){
         dbHandler.addEquipment(this.type.toString(),0);
     }
 
-    private ArrayList<Integer> findSameType(){
+    private ArrayList<Integer> findSameType(DBHandler dbHandler){
         return dbHandler.equipmentSameType(this.type.toString());
 
     }
@@ -47,10 +46,11 @@ public class GymEquipment {
         return daysUntilMaintenance;
     }
 
-    public int getQueueLength(){
-        return queue.checkQueue(this.id);
+    public int getQueueLength(DBHandler dbHandler){
+
+        return queue.checkQueue(this.id,dbHandler);
     }
-    public void addToQueue(){
-        queue.addToQueue(this.id);
+    public void addToQueue(DBHandler dbHandler){
+        queue.addToQueue(this.id,dbHandler);
     }
 }
