@@ -53,8 +53,9 @@
         android:id="@+id/textView7"
         android:layout_width="261dp"
         android:layout_height="31dp"
-        android:layout_marginStart="75dp"
-        android:layout_marginTop="372dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginLeft="56dp"
+        android:layout_marginTop="396dp"
         android:text="Select Program "
         android:textAlignment="center"
         android:textColor="#3F51B5"
@@ -66,8 +67,9 @@
         android:id="@+id/textView5"
         android:layout_width="102dp"
         android:layout_height="23dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="292dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="288dp"
         android:text="Time "
         android:textAlignment="textStart"
         android:textColor="#3F51B5"
@@ -78,8 +80,9 @@
         android:id="@+id/textView4"
         android:layout_width="102dp"
         android:layout_height="23dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="214dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="232dp"
         android:text="Date"
         android:textAlignment="textStart"
         android:textColor="#3F51B5"
@@ -105,8 +108,9 @@
         android:id="@+id/textView3"
         android:layout_width="102dp"
         android:layout_height="23dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="135dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="172dp"
         android:text="Session Name"
         android:textAlignment="textStart"
         android:textColor="#3F51B5"
@@ -142,12 +146,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    -
+
     <EditText
         android:id="@+id/session_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="168dp"
-        android:layout_marginTop="206dp"
+        android:layout_marginStart="172dp"
+        android:layout_marginLeft="172dp"
+        android:layout_marginTop="232dp"
         android:ems="10"
         android:inputType="date"
         android:textColor="#3F51B5"
@@ -156,8 +163,8 @@
 
     <EditText
         android:id="@+id/session_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="218dp"
+        android:layout_height="43dp"
         android:layout_marginStart="168dp"
         android:layout_marginTop="125dp"
         android:layout_marginEnd="33dp"
@@ -167,9 +174,10 @@
         android:textColor="#3F51B5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.105"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-    -
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.367" />
 
     <EditText
         android:id="@+id/session_time"
@@ -184,7 +192,9 @@
         android:textColor="#3F51B5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.061" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
