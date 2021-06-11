@@ -78,10 +78,7 @@ public class DBHandler extends SQLiteOpenHelper {
                 + "userid" +  "INTEGER,"
                 + " FOREIGN KEY(id) REFERENCES Users(id) ON DELETE CASCADE ON UPDATE CASCADE)";
 
-        String sessionSelections = "CREATE TABLE  IF NOT EXISTS " +"Sessions" + "("
-                + "sessionid" + " INTEGER PRIMARY KEY ,"
-                + "name" + " TEXT,"
-                + " FOREIGN KEY(sessionid) REFERENCES Sessions(idsession) ON DELETE CASCADE ON UPDATE CASCADE)";
+
 
                 // ADD ANY OTHER TABLE NEEDED
 
@@ -93,7 +90,7 @@ public class DBHandler extends SQLiteOpenHelper {
         db.execSQL(adminQuery);
         db.execSQL(equipmentQuery);
         db.execSQL(sessionQuery);
-        db.execSQL(sessionSelections);
+
     }
 
     // add new User to our DB
@@ -331,10 +328,30 @@ public class DBHandler extends SQLiteOpenHelper {
 
 
     public int ClientId (String username){
+        int id =0;
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor res = db.rawQuery("Select * from Users WHERE username ="+username,null);
-        int id = res.getColumnIndex("id");
+        Cursor res = db.rawQuery("Select id from Client WHERE username ="+username,null);
+        if(res.moveToFirst()){
+           id = res.getInt(0);
+        }
+
+        res.close();
         return id;
+    }
+
+
+    public void CreateSession(String name,String date,String time,int idClient){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        values.put("name", name);
+        values.put("date", date);
+        values.put("time", time);
+        values.put("program","GYM");
+        values.put("userid", idClient);
+        db.insert("Sessions", null, values);
+        db.close();
     }
 
     // needed function, not used in code
