@@ -18,6 +18,7 @@ public class EditSessionActivity extends AppCompatActivity {
         ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(EditSessionActivity.this, android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.sessions));
         myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         mySpinner.setAdapter(myAdapter);
+//        asadasdasd
 
     }
 
