@@ -244,7 +244,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/cancel"
+        android:id="@+id/gym_cancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="256dp"
@@ -258,11 +258,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="415dp"
+        android:layout_marginTop="412dp"
+        android:layout_marginEnd="352dp"
+        android:layout_marginBottom="292dp"
         android:text="Legs"
         android:textAlignment="center"
         android:textColor="#3F51B5"
         android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -271,11 +275,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="261dp"
+        android:layout_marginTop="260dp"
+        android:layout_marginEnd="350dp"
+        android:layout_marginBottom="444dp"
         android:text="Back"
         android:textAlignment="center"
         android:textColor="#3F51B5"
         android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -297,16 +305,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="96dp"
+        android:layout_marginEnd="343dp"
+        android:layout_marginBottom="608dp"
         android:text="Chest"
         android:textAlignment="center"
         android:textColor="#3F51B5"
         android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/submit"
+        android:id="@+id/gym_submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"

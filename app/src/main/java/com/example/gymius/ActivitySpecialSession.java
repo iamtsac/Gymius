@@ -2,21 +2,20 @@ package com.example.gymius;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-public class ActivityGymSession extends AppCompatActivity {
 
-    String username; // to be initialized from data sent from ActivityLogin
-    Button cancelButton,submitButton;
+public class ActivitySpecialSession extends AppCompatActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.gym_session);
+        setContentView(R.layout.special_session);
 
-        cancelButton = findViewById(R.id.gym_cancel);
-        submitButton = findViewById(R.id.gym_submit);
+
+        Button cancelButton = findViewById(R.id.special_cancel);
+        Button submitButton = findViewById(R.id.special_submit);
 
 
 
@@ -33,6 +32,6 @@ public class ActivityGymSession extends AppCompatActivity {
                 finish();
             }
         });
+
     }
 }
-

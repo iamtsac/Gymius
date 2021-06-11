@@ -1,12 +1,14 @@
 package com.example.gymius;
 
+import java.util.ArrayList;
+
 public class GymEquipment {
 
     private int id;
     private equipType type;
     private int daysUntilMaintenance;
     enum equipType{
-        PRESSA, BENCH
+        LEGPRESS,CHESTBENCH,CROSSOVER
     }
 
     public GymEquipment(int id, equipType type) {
@@ -23,10 +25,14 @@ public class GymEquipment {
         return type;
     }
 
-    /*private ArrayList<GymEquipment> findSameType(GymEquipment eq){
-        type = getEnum();
+    public void addToDatabase(DBHandler dbHandler){
+        dbHandler.addEquipment(this.type.toString(),0);
+    }
 
-    }*/
+    private ArrayList<Integer> findSameType(DBHandler dbHandler){
+        return dbHandler.equipmentSameType(this.type.toString());
+
+    }
 
     public int getId() {
         return id;
@@ -40,7 +46,11 @@ public class GymEquipment {
         return daysUntilMaintenance;
     }
 
-    public int getQueueLength(){
-        return queue.checkQueue();
+    public int getQueueLength(DBHandler dbHandler){
+
+        return queue.checkQueue(this.id,dbHandler);
+    }
+    public void addToQueue(DBHandler dbHandler){
+        queue.addToQueue(this.id,dbHandler);
     }
 }

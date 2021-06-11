@@ -64,7 +64,23 @@ public class DBHandler extends SQLiteOpenHelper {
                 + "salary" + " DECIMAL(5,2),"
                 + " FOREIGN KEY(id) REFERENCES Users(id) ON DELETE CASCADE ON UPDATE CASCADE)";
 
-        // ADD ANY OTHER TABLE NEEDED
+        String equipmentQuery = "CREATE TABLE  IF NOT EXISTS " + "GymEquipment" + "("
+                + "id" + "INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + "type" + "TEXT CHECK(type IN ('LEGPRESS','CHESTBENCH','CROSSOVER')), "
+                + "queue" + "INTEGER)";
+
+        String sessionQuery =  "CREATE TABLE  IF NOT EXISTS " +"Sessions" + "("
+                + "idsession" + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+                + "name" + " TEXT,"
+                + "date" + "TEXT,"
+                + "time"  + "INTEGER,"
+                + "program"+  "TEXT CHECK(type IN ('GYM','GROUP','SPECIAL')),"
+                + "userid" +  "INTEGER,"
+                + " FOREIGN KEY(id) REFERENCES Users(id) ON DELETE CASCADE ON UPDATE CASCADE)";
+
+
+
+                // ADD ANY OTHER TABLE NEEDED
 
         db.execSQL(userQuery);
         db.execSQL(rolesQuery);
@@ -72,6 +88,9 @@ public class DBHandler extends SQLiteOpenHelper {
         db.execSQL(clientQuery);
         db.execSQL(trainerQuery);
         db.execSQL(adminQuery);
+        db.execSQL(equipmentQuery);
+        db.execSQL(sessionQuery);
+
     }
 
     // add new User to our DB
@@ -160,6 +179,7 @@ public class DBHandler extends SQLiteOpenHelper {
         db.close();
     }
 
+
     //delete entry from Users table (
     public void removeUser(String username){
         SQLiteDatabase db = this.getWritableDatabase();
@@ -199,6 +219,49 @@ public class DBHandler extends SQLiteOpenHelper {
         cursorLogIn.close();
         return id;
     }
+    public void addEquipment(String type, int queue) {
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        values.put("type", type.toUpperCase());
+        values.put("queue", queue);
+
+        db.insert("GymEquipment", null, values);
+
+        db.close();
+    }
+    public int getQueue(int id){
+        int queue_length=0;
+        SQLiteDatabase db = this.getReadableDatabase();
+        String sql = "SELECT queue FROM GymEquipment " +
+                "WHERE GymEquipent.id = '" + id;
+        Cursor cursorQueue = db.rawQuery(sql, null); // get role of the User that wants to log in
+        if(cursorQueue.moveToFirst()){
+             queue_length = cursorQueue.getInt(0);
+        }
+
+        cursorQueue.close();
+        return queue_length;
+    }
+    public void addToQueue(int id){
+        int queue_len = getQueue(id);
+        queue_len= queue_len++;
+        String id_str = Integer.toString(id);
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        // on below line we are passing all values
+        // along with its key and value pair.
+        values.put("queue", queue_len);
+
+
+        // on below line we are calling a update method to update our database and passing our values.
+        // and we are comparing it with name of our course which is stored in original name variable.
+        db.update("GymEquipment", values, "id=?", new String[]{id_str});
+        db.close();
+    }
+
 
     // function for reading all usernames in Client or Trainer table
     public ArrayList<String> loadAllUsernames(String table) {
@@ -242,6 +305,53 @@ public class DBHandler extends SQLiteOpenHelper {
         }
 
         return usernamesArrayList;
+    }
+    public ArrayList<Integer> equipmentSameType(String type) {
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        ArrayList<Integer> idList = new ArrayList<>();
+
+
+        String sql = "SELECT GymEquipment.id FROM " + "GymEquipment" +
+                "WHERE GymEquipment.type =" + type;
+        Cursor cursorEquipType = db.rawQuery(sql, null);
+
+        if (cursorEquipType.moveToFirst()) {
+            do {
+                idList.add(cursorEquipType.getInt(0));
+            } while (cursorEquipType.moveToNext());
+
+            cursorEquipType.close();
+        }
+        return idList;
+    }
+
+
+    public int ClientId (String username){
+        int id =0;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res = db.rawQuery("Select id from Client WHERE username ="+username,null);
+        if(res.moveToFirst()){
+           id = res.getInt(0);
+        }
+
+        res.close();
+        return id;
+    }
+
+
+    public void CreateSession(String name,String date,String time,int idClient){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        values.put("name", name);
+        values.put("date", date);
+        values.put("time", time);
+        values.put("program","GYM");
+        values.put("userid", idClient);
+        db.insert("Sessions", null, values);
+        db.close();
     }
 
     // needed function, not used in code
