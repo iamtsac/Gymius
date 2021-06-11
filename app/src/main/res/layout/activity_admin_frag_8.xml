@@ -7,6 +7,17 @@
     android:layout_height="match_parent"
     tools:context=".ActivityAdminDiscount">
 
+    <Button
+        android:id="@+id/maint_button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="664dp"
+        android:text="Back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.049"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/disc_text"
         android:layout_width="wrap_content"
@@ -43,9 +54,10 @@
         android:id="@+id/disc_button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="618dp"
+        android:layout_marginTop="664dp"
         android:text="Accept"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.949"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
