@@ -6,7 +6,7 @@ public class GymEquipment {
     private equipType type;
     private int daysUntilMaintenance;
     enum equipType{
-        PRESSA, BENCH
+        LEGPRESS,CHESTBENCH,CROSSOVER
     }
 
     public GymEquipment(int id, equipType type) {
@@ -41,6 +41,6 @@ public class GymEquipment {
     }
 
     public int getQueueLength(){
-        return queue.checkQueue();
+        return queue.checkQueue(this.id);
     }
 }
