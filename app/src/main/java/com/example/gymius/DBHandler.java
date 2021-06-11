@@ -309,6 +309,26 @@ public class DBHandler extends SQLiteOpenHelper {
 
         return usernamesArrayList;
     }
+    public ArrayList<Integer> equipmentSameType(String type) {
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        ArrayList<Integer> idList = new ArrayList<>();
+
+
+        String sql = "SELECT GymEquipment.id FROM " + "GymEquipment" +
+                "WHERE GymEquipment.type =" + type;
+        Cursor cursorEquipType = db.rawQuery(sql, null);
+
+        if (cursorEquipType.moveToFirst()) {
+            do {
+                idList.add(cursorEquipType.getInt(0));
+            } while (cursorEquipType.moveToNext());
+
+            cursorEquipType.close();
+        }
+        return idList;
+    }
+
 
     public int ClientId (String username){
         SQLiteDatabase db = this.getReadableDatabase();
