@@ -14,6 +14,8 @@ public class ActivityClient extends AppCompatActivity {
     String username; // to be initialized from data sent from ActivityLogin
     TextView usernameEdit, test;
     Button createSession;
+    Button deleteSession;
+    Button editSession;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +29,10 @@ public class ActivityClient extends AppCompatActivity {
         usernameEdit.setText(username);
         createSession = findViewById(R.id.createSessionButton);
 
+        deleteSession = findViewById(R.id.deleteSessionButton);
+
+        editSession = findViewById(R.id.editSessionButton);
+
         createSession.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -35,6 +41,22 @@ public class ActivityClient extends AppCompatActivity {
                 startActivity(intent1);
             }
         });
+
+        deleteSession.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(getApplicationContext(),DeleteSessionActivity.class);
+                startActivity(intent1);
+            }
+        });
+
+        editSession.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(getApplicationContext(),EditSessionActivity.class);
+            }
+        });
+
 
 
     }
