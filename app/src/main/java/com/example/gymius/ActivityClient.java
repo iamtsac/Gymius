@@ -54,6 +54,7 @@ public class ActivityClient extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent1 = new Intent(getApplicationContext(),EditSessionActivity.class);
+                startActivity(intent1);
             }
         });
 
