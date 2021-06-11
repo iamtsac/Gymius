@@ -59,6 +59,9 @@
         <action
             android:id="@+id/action_activity_admin_frag_4_to_activityAdminDiscount"
             app:destination="@id/activity_admin_frag_8" />
+        <action
+            android:id="@+id/action_activity_admin_frag_4_to_adminAddSubs"
+            app:destination="@id/adminAddSubs" />
     </fragment>
     <fragment
         android:id="@+id/activity_admin_frag_5"
@@ -68,6 +71,9 @@
         <action
             android:id="@+id/action_activityAdminEquipment_to_activityAdminFrag1"
             app:destination="@id/activityAdminFrag1" />
+        <action
+            android:id="@+id/action_activity_admin_frag_5_to_adminMaintenance"
+            app:destination="@id/adminMaintenance" />
     </fragment>
     <fragment
         android:id="@+id/activity_admin_frag_6"
@@ -77,6 +83,9 @@
         <action
             android:id="@+id/action_activity_admin_frag_6_to_activityAdminFrag1"
             app:destination="@id/activityAdminFrag1" />
+        <action
+            android:id="@+id/action_activity_admin_frag_6_to_adminDeleteGP"
+            app:destination="@id/adminDeleteGP" />
     </fragment>
     <fragment
         android:id="@+id/activity_admin_frag_7"
@@ -89,6 +98,9 @@
         <action
             android:id="@+id/action_activity_admin_frag_7_to_activityAdminDiscount"
             app:destination="@id/activity_admin_frag_8" />
+        <action
+            android:id="@+id/action_activity_admin_frag_7_to_adminAddSS"
+            app:destination="@id/adminAddSS" />
     </fragment>
     <fragment
         android:id="@+id/activity_admin_frag_8"
@@ -101,5 +113,41 @@
         <action
             android:id="@+id/action_activityAdminDiscount_to_activity_admin_frag_7"
             app:destination="@id/activity_admin_frag_7" />
+    </fragment>
+    <fragment
+        android:id="@+id/adminMaintenance"
+        android:name="com.example.gymius.AdminMaintenance"
+        android:label="fragment_admin_maintenance"
+        tools:layout="@layout/fragment_admin_maintenance" >
+        <action
+            android:id="@+id/action_adminMaintenance_to_activity_admin_frag_5"
+            app:destination="@id/activity_admin_frag_5" />
+    </fragment>
+    <fragment
+        android:id="@+id/adminDeleteGP"
+        android:name="com.example.gymius.AdminDeleteGP"
+        android:label="fragment_admin_delete_gp"
+        tools:layout="@layout/fragment_admin_delete_gp" >
+        <action
+            android:id="@+id/action_adminDeleteGP_to_activity_admin_frag_6"
+            app:destination="@id/activity_admin_frag_6" />
+    </fragment>
+    <fragment
+        android:id="@+id/adminAddSS"
+        android:name="com.example.gymius.AdminAddSS"
+        android:label="fragment_admin_add_ss"
+        tools:layout="@layout/fragment_admin_add_ss" >
+        <action
+            android:id="@+id/action_adminAddSS_to_activity_admin_frag_7"
+            app:destination="@id/activity_admin_frag_7" />
+    </fragment>
+    <fragment
+        android:id="@+id/adminAddSubs"
+        android:name="com.example.gymius.AdminAddSubs"
+        android:label="fragment_admin_add_subs"
+        tools:layout="@layout/fragment_admin_add_subs" >
+        <action
+            android:id="@+id/action_adminAddSubs_to_activity_admin_frag_4"
+            app:destination="@id/activity_admin_frag_4" />
     </fragment>
 </navigation>

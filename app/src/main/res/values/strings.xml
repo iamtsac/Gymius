@@ -18,4 +18,11 @@
         <item>Special Service 1</item>
     </string-array>
 
+    <string-array name="list_maintenance">
+        <item>Press Num: 3  Scheduled: 5/12/2021</item>
+        <item>Treadmill Num: 3  Scheduled: 24/6/2021</item>
+        <item>Treadmill Num: 5  Scheduled: 31/9/2021</item>
+    </string-array>
+
+
 </resources>
