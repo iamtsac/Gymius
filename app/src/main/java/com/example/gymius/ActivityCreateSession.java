@@ -27,10 +27,12 @@ public class ActivityCreateSession extends AppCompatActivity {
         setContentView(R.layout.create_session);
         DBHandler db = new DBHandler(getApplicationContext());
 
-        //clientID = db.ClientId(username);
 
         Intent intent = getIntent();
         username = intent.getStringExtra("username");
+
+        clientID = db.loadUserId(username);
+
 
         gymButton = findViewById(R.id.gym_but);
         groupButton = findViewById(R.id.group_but);
@@ -79,7 +81,7 @@ public class ActivityCreateSession extends AppCompatActivity {
                 time = String.valueOf(session_time.getText());
 
                 if(!name.isEmpty() && !date.isEmpty() && !time.isEmpty()){
-                    //db.CreateSession(name,date,time,clientID);
+                    db.CreateSession(name,date,time,clientID);
                 }
                 finish();
             }

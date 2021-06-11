@@ -65,18 +65,18 @@ public class DBHandler extends SQLiteOpenHelper {
                 + " FOREIGN KEY(id) REFERENCES Users(id) ON DELETE CASCADE ON UPDATE CASCADE)";
 
         String equipmentQuery = "CREATE TABLE  IF NOT EXISTS " + "GymEquipment" + "("
-                + "id" + "INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + "type" + "TEXT CHECK(type IN ('LEGPRESS','CHESTBENCH','CROSSOVER')), "
-                + "queue" + "INTEGER)";
+                + "id " + "INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + "type " + "TEXT CHECK(type IN ('LEGPRESS','CHESTBENCH','CROSSOVER')), "
+                + "queue " + "INTEGER)";
 
         String sessionQuery =  "CREATE TABLE  IF NOT EXISTS " +"Sessions" + "("
                 + "idsession" + " INTEGER PRIMARY KEY AUTOINCREMENT,"
                 + "name" + " TEXT,"
-                + "date" + "TEXT,"
-                + "time"  + "INTEGER,"
-                + "program"+  "TEXT CHECK(type IN ('GYM','GROUP','SPECIAL')),"
-                + "userid" +  "INTEGER,"
-                + " FOREIGN KEY(id) REFERENCES Users(id) ON DELETE CASCADE ON UPDATE CASCADE)";
+                + "date" + " TEXT,"
+                + "time"  + " INTEGER,"
+                + "program"+  " TEXT CHECK(program IN ('GYM','GROUP','SPECIAL')),"
+                + "userid" +  " INTEGER,"
+                + " FOREIGN KEY(userid) REFERENCES Users(id) ON DELETE CASCADE ON UPDATE CASCADE)";
 
 
 
@@ -207,16 +207,18 @@ public class DBHandler extends SQLiteOpenHelper {
     }
 
     public int loadUserId(String username){
-        int id = 0;
+        int id = -1;
 
         SQLiteDatabase db = this.getReadableDatabase();
-        String sql = "SELECT id FROM Users WHERE username = '" + username + "'";
+        String sql = "SELECT id FROM Users WHERE username =" + "'"+username+ "'" ;
         Cursor cursorLogIn = db.rawQuery(sql, null);
         if(cursorLogIn.moveToFirst()){
             id = cursorLogIn.getInt(0);
         }
 
         cursorLogIn.close();
+        System.out.println("FFFFFFFFFFFFFFFFFF = "+id);
+        System.out.println("cursor" + cursorLogIn.toString());
         return id;
     }
     public void addEquipment(String type, int queue) {
@@ -327,17 +329,7 @@ public class DBHandler extends SQLiteOpenHelper {
     }
 
 
-    public int ClientId (String username){
-        int id =0;
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor res = db.rawQuery("Select id from Client WHERE username ="+username,null);
-        if(res.moveToFirst()){
-           id = res.getInt(0);
-        }
 
-        res.close();
-        return id;
-    }
 
 
     public void CreateSession(String name,String date,String time,int idClient){
