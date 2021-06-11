@@ -8,13 +8,13 @@ import android.os.Bundle;
 public class ActivityGymSession extends AppCompatActivity {
 
     String username; // to be initialized from data sent from ActivityLogin
-
+    int i;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gym_session);
 
-      
+
     }
 }
 
